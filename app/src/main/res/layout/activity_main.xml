@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coffee">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fadeScrollbars="true"
+    tools:context="com.example.mudit.coffeeshop.MainActivity"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="menu"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/quantity"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Name"
+        android:inputType="textCapWords"
+        android:layout_below="@id/quantity"
+        android:id="@+id/Enter_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Mobile Number"
+        android:inputType="number"
+        android:layout_below="@id/Enter_name"
+        android:id="@+id/Enter_number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Address"
+        android:inputType="textImeMultiLine"
+        android:layout_below="@id/Enter_number"
+        android:id="@+id/Enter_address"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Enter_address"
+        android:layout_marginTop="30dp"
+        android:id="@+id/middle"
+        android:layout_centerHorizontal="true">
+
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-"
+                android:id="@+id/button_decrease"
+                android:onClick="decrease"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textColor="#FFFFFF"
+                android:background="#5e422f"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#000000"
+                android:id="@+id/number"
+                android:textSize="40sp"
+                android:layout_alignBottom="@+id/button_decrease"
+                android:layout_toEndOf="@+id/button_decrease"
+                android:layout_toRightOf="@+id/button_decrease"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="+"
+                android:id="@+id/button_increase"
+                android:onClick="increase"
+                android:layout_alignBottom="@+id/number"
+                android:layout_toRightOf="@+id/number"
+                android:layout_toEndOf="@+id/number"
+                android:layout_marginLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:background="#5e422f"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/middle"
+        android:layout_marginTop="30dp"
+        android:id="@+id/type"
+        android:layout_centerHorizontal="true">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TYPE"
+            android:textColor="#000000"
+            android:id="@+id/variant"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="next"
+            android:id="@+id/button_increase2"
+            android:onClick="next"
+            android:textColor="#FFFFFF"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#5e422f"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="previous"
+            android:id="@+id/button_decrease2"
+            android:onClick="previous"
+            android:textColor="#FFFFFF"
+            android:layout_alignBaseline="@+id/variant"
+            android:layout_alignBottom="@+id/variant"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#5e422f"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/price"
+        android:layout_below="@id/type"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/small_price"
+            android:textSize="20sp"
+            android:textColor="#A1887F"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/medium_price"
+            android:textSize="20sp"
+            android:textColor="#A1887F"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/large_price"
+            android:textSize="20sp"
+            android:textColor="#A1887F"
+            />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chocolate_topping"
+        android:layout_marginTop="20dp"
+        android:id="@+id/size"
+        android:layout_centerHorizontal="true">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="SMALL"
+            android:id="@+id/small"
+            android:onClick="setprice_small"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:textColor="#FFFFFF"
+            android:background="#5e422f"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="MEDIUM"
+            android:id="@+id/medium"
+            android:onClick="setprice_medium"
+            android:layout_alignBottom="@+id/small"
+            android:layout_toRightOf="@+id/small"
+            android:layout_toEndOf="@+id/small"
+            android:layout_marginLeft="10dp"
+            android:textColor="#FFFFFF"
+            android:background="#5e422f"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="LARGE"
+            android:id="@+id/large"
+            android:onClick="setprice_large"
+            android:layout_alignBottom="@+id/medium"
+            android:layout_toRightOf="@+id/medium"
+            android:layout_toEndOf="@+id/medium"
+            android:layout_marginLeft="10dp"
+            android:textColor="#FFFFFF"
+            android:background="#5e422f"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cost"
+        android:text=""
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:textColor="#E0E0E0"
+        android:layout_below="@id/size"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/price"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Whipped_cream">
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Whipped_cream_check_box"
+        android:text="Whipped cream"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/Whipped_cream"
+        android:id="@+id/chocolate_topping">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chocolate_topping_check_box"
+            android:layout_marginLeft="16dp"
+            android:textSize="18sp"
+            android:text="Chocolate topping"
+            android:textColor="#FFFFFF"
+            />
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cost"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/last"
+        android:text="Place Your Order"
+        android:textSize="20sp"
+        android:textColor="#E0E0E0"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/order"
+        android:layout_below="@id/last"
+        android:text="ORDER"
+        android:textSize="20sp"
+        android:onClick="PlaceOrder"
+        android:textColor="#000000"
+        android:layout_marginBottom="40dp"
+        android:background="#5e422f"
+    />
+
+
+
+</RelativeLayout>
+</ScrollView>
